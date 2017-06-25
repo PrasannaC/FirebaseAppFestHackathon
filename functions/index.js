@@ -57,12 +57,8 @@ exports.TwitterFuncHttp = functions.https.onRequest((req, res) => {
     },
     function(err, data, response) {
       if (data) {
-        console.log(data);
         var filteredData = GetDataWithHashtagsOnly(data.statuses);
-        console.log(filteredData);
         var filteredData = GetDictionaryOfHashtags(filteredData);
-        console.log("In Req Callback");
-        console.log(filteredData.length);
         res.send(filteredData);
       }
     }
