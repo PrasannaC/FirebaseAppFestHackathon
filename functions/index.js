@@ -24,10 +24,10 @@ function GetDictionaryOfHashtags(data) {
     data.forEach(function(element) {
       var hashtags = element.entities.hashtags;
       hashtags.forEach(function(hash) {
-        if (returnData[hash.text.toLowerCase()] == null) {
-          returnData[hash.text.toLowerCase()] = [];
+        if (returnData['#'+hash.text.toLowerCase()] == null) {
+          returnData['#'+hash.text.toLowerCase()] = [];
         }
-        returnData[hash.text.toLowerCase()].push({
+        returnData['#'+hash.text.toLowerCase()].push({
           text: element.text,
           name: element.user.screen_name,
           time: element.created_at
